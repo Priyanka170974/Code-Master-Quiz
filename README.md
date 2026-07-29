@@ -131,6 +131,7 @@ CodeMaster Quiz transforms traditional practice into an enjoyable experience by 
 <p align="center">
   <img src="result.png" width="800">
 </p>
+---
 #  Developer
 
 ### Priyanka Jain
