@@ -81,7 +81,7 @@ CodeMaster-Quiz/
 Clone the repository
 
 ```bash
-git clone https://github.com/your-username/CodeMaster-Quiz.git
+
 ```
 
 Open the project folder
@@ -138,6 +138,6 @@ CodeMaster Quiz transforms traditional practice into an enjoyable experience by 
 
 ###  If you found this project helpful, don't forget to Star the Repository!
 
-Made with ❤️ and lots of ☕ by **Priyanka Jain**
+
 
 </div>
