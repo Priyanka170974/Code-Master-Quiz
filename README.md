@@ -81,7 +81,7 @@ CodeMaster-Quiz/
 Clone the repository
 
 ```bash
-
+priyanka170974.github.io/Code-Master-Quiz/
 ```
 
 Open the project folder
