@@ -118,12 +118,19 @@ CodeMaster Quiz transforms traditional practice into an enjoyable experience by 
 
 ---
 
-# Preview
+#  Project Preview
 
-> Add screenshots or GIFs here to showcase your project.
+<p align="center">
+  <img src="home.png" width="800">
+</p>
 
----
+<p align="center">
+  <img src="quiz.png" width="800">
+</p>
 
+<p align="center">
+  <img src="result.png" width="800">
+</p>
 #  Developer
 
 ### Priyanka Jain
