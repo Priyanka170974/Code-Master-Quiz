@@ -1,0 +1,468 @@
+/* ================== BODY ================== */
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    background:#0b1d3a;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+/* ================== CANVAS ================== */
+#sparkCanvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:1;
+    filter: drop-shadow(0 0 5px white);
+}
+/* ================== CONTAINER ================== */
+.container{
+    position: relative;
+    z-index: 2;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    padding-top:80px; /* IMPORTANT FIX */
+}
+.card,
+.questionBlock,
+.action-btn,
+.lang-btn{
+    will-change: transform;
+}
+.action-btn:active,
+.lang-btn:active,
+#submitBtn:active{
+    transform: scale(0.95);
+}
+/* ================== HEADER ================== */
+.header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* ================== CARD ================== */
+
+/* ================== ANIMATION ================== */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================== TITLE ================== */
+#quizTitle{
+    font-size:50px;
+    font-weight:bold;
+    margin:0;
+    text-shadow:0 0 10px #6b6ffb;
+}
+.card{
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+
+  padding: 25px;
+  width: 420px;
+  margin: 20px auto;
+
+  box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+  transition: 0.3s ease;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+}
+/* ================== LOGIN ================== */
+#loginBox input{
+    width:90%;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+    margin:8px 0;
+}
+
+/* ================== BUTTONS ================== */
+.lang-btn{
+    display:block;
+    width:100%;
+    margin:10px 0;
+    background:#6b6ffb;
+    color:#fff;
+    border:none;
+    padding:14px;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.lang-btn:hover{
+    background:#5a5fe0;
+    transform:scale(1.05);
+}
+
+/* ================== QUESTIONS ================== */
+.questionBlock{
+    padding:15px;
+    margin:15px 0;
+    border-radius:12px;
+    background:#132b4f;
+    text-align:left;
+    transition:0.3s;
+}
+.questionBlock:hover{
+    transform: translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+.questionBlock p{
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+/* ================== OPTIONS ================== */
+.options:hover{
+    background:rgba(107,111,251,0.2);
+}
+
+/* ================== TIMER ================== */
+#timerBox{
+    font-size:26px;
+    font-weight:bold;
+}
+.danger{
+    color:red !important;
+    animation:blink 0.5s infinite;
+}
+@keyframes blink{
+    0%{opacity:1;}
+    50%{opacity:0.3;}
+    100%{opacity:1;}
+}
+
+/* ================== SUBMIT BUTTON ================== */
+#submitBtn{
+    margin:25px auto;
+    padding:12px 35px;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(45deg,#6b6ffb,#8f7bff);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+#submitBtn:hover{
+    transform:scale(1.05);
+}
+
+/* ================== SCORE ================== */
+#scoreText{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+/* ================== REVIEW ================== */
+.review-container{
+    max-height:350px;
+    overflow-y:auto;
+    margin-top:20px;
+}
+
+.review-box{
+    padding:18px;
+    margin:15px 0;
+    border-radius:15px;
+    background:linear-gradient(145deg,#132b4f,#1c3b6b);
+    box-shadow:0 6px 20px rgba(0,0,0,0.3);
+    text-align:left;
+    transition:0.3s;
+}
+.review-box:hover{
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* correct / wrong card */
+.review-box.correct{
+    background: linear-gradient(145deg,#1c3b6b,#244c85);
+}
+.review-box.wrong{
+    background: linear-gradient(145deg,#1a2f57,#233f73);
+}
+
+/* options */
+.review-box .option{
+    display:block;
+    padding:10px;
+    margin:6px 0;
+    border-radius:8px;
+    border:1px solid rgba(107,111,251,0.3);
+}
+
+.review-box .option.correct{
+    background: rgba(0,255,136,0.2);
+    color:#00ff88;
+    border:1px solid #00ff88;
+    font-weight:bold;
+}
+.review-box .option.wrong{
+    background: rgba(255,77,77,0.2);
+    color:#ff4d4d;
+    border:1px solid #ff4d4d;
+    font-weight:bold;
+}
+.review-box .option.normal{
+    color:#ccc;
+}
+
+.question-title{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+/* ================== BUTTON ================== */
+#reviewBtn{
+    margin:8px auto;
+    padding:12px 30px;
+    font-size:18px;
+    width:220px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#6b6ffb,#8f7bff);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(107,111,251,0.5);
+}
+#reviewBtn:hover{
+    transform:scale(1.08);
+}
+
+/* ACTION BUTTON */
+.action-btn{
+    display:block;
+    margin:6px auto;
+    padding:12px 30px;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+   border-radius:50px;
+    background:linear-gradient(45deg,#6b6ffb,#8f7bff);
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(107,111,251,0.5);
+}
+.action-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px rgba(107,111,251,0.8);
+}
+
+#scoreBox .action-btn{
+    width:220px;
+    border-radius:50px;
+    padding:12px 20px;
+    white-space: nowrap;
+}
+
+/* ================== LEADERBOARD ================== */
+#leaderboardBox{
+    margin-top:20px;
+    animation: fadeIn 0.4s ease;
+}
+
+#leaderboardList{
+    list-style:none;
+    padding:0;
+    margin-top:20px;
+}
+
+#leaderboardList li{
+    background:#132b4f;
+    margin:10px 0;
+    padding:14px;
+    border-radius:10px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+#leaderboardList li:hover{
+    transform:scale(1.03);
+    background:#1b3a66;
+}
+
+#leaderboardList li:first-child{
+    color:gold;
+    font-weight:bold;
+    box-shadow:0 0 15px rgba(255,215,0,0.5);
+}
+
+/* ================== MOBILE RESPONSIVE ================== */
+@media(max-width:500px){
+
+    
+
+    #quizTitle{
+        font-size:35px;
+    }
+
+.action-btn,
+    .lang-btn,
+    #submitBtn{
+        width:100%;
+        font-size:16px;
+    }
+
+#timerBox{
+        font-size:20px;
+    }
+}
+.progress-bar{
+  width: 100%;
+  height: 6px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+#progress{
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg,#00f5ff,#7c3aed);
+  transition: width 0.3s;
+}
+.action-btn, .lang-btn{
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover, .lang-btn:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(124,58,237,0.6);
+  cursor: pointer;
+}
+
+.action-btn:active, .lang-btn:active{
+  transform: scale(0.95);
+}
+@media (hover: hover){
+  .questionBlock:hover{
+    transform: translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  }
+}
+#progress{
+  border-radius: 10px;
+}
+#loginBox{
+    text-align: center;
+}
+.review-box.correct{
+    border: 2px solid #00ff88;
+    box-shadow: 0 0 15px rgba(0,255,136,0.3);
+}
+
+.review-box.wrong{
+    border: 2px solid #ff4d4d;
+    box-shadow: 0 0 15px rgba(255,77,77,0.3);
+}
+#reviewBox h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.options{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.option{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px;
+    background:#1c3a66;
+    border-radius:8px;
+    cursor:pointer;
+    color:white;
+}
+
+.option input{
+    margin:0;
+}
+.correctOption{
+    background: rgba(0,255,136,0.2) !important;
+    border: 2px solid #00ff88 !important;
+    color: #00ff88 !important;
+}
+
+.wrongOption{
+    background: rgba(255,77,77,0.2) !important;
+    border: 2px solid #ff4d4d !important;
+    color: #ff4d4d !important;
+}
+
+.correctOption span,
+.wrongOption span{
+    font-weight:bold;
+}
+.review-options{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px;
+}
+
+.review-options .option{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px;
+    background:#1c3a66;
+    border-radius:8px;
+}
+
+.correctOption{
+    background:rgba(0,255,136,0.2) !important;
+    border:1px solid #00ff88;
+    color:#00ff88;
+}
+
+.wrongOption{
+    background:rgba(255,77,77,0.2) !important;
+    border:1px solid #ff4d4d;
+    color:#ff4d4d;
+}
+.review-options{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px;
+}
+
+.review-options .option{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px;
+    border-radius:8px;
+    background:#1c3a66;
+}
